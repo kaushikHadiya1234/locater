@@ -32,7 +32,16 @@ class _HomeScreenState extends State<HomeScreen> {
           title: Text("Location tracker",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.black),),
           centerTitle: true,
           backgroundColor: Colors.white,
-          leading: IconButton(onPressed: (){},icon: Icon(Icons.menu,color: Colors.black,)),
+          leading: Builder(
+            builder: (context) {
+              return IconButton(
+                  onPressed: () => Scaffold.of(context).openDrawer(),
+                  icon: Icon(
+                    Icons.menu,
+                    color: Colors.black,
+                  ));
+            }
+          ),
           actions: [
             IconButton(onPressed: (){},icon: Icon(Icons.search,color: Colors.black,)),
           ],
